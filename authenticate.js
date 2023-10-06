@@ -54,9 +54,9 @@ exports.facebookPassport = passport.use(
         {
             clientID: config.facebook.clientId,
             clientSecret: config.facebook.clientSecret
-        },
+        }, 
         (accessToken, refreshToken, profile, done) => {
-            User.findOne({ facebookId: profile.id }, (err, user) => {
+            User.findOne({facebookId: profile.id}, (err, user) => {
                 if (err) {
                     return done(err, false);
                 }
